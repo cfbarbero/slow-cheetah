@@ -26,4 +26,18 @@ build:
   project: build.proj      # path to Visual Studio solution or project
   
   # MSBuild verbosity level
-  verbosity: detailed
+  verbosity: minimal
+
+# scripts to run after build
+#after_build:
+#  appveyor PushArtifact \BuildOutput\NuGet\SlowCheetah.*.nupkg
+
+#---------------------------------#
+#      artifacts configuration    #
+#---------------------------------#
+
+artifacts:
+
+  # pushing a single file
+  - path: \BuildOutput\slowcheetah.vsix  
+  - path: \BuildOutput\Nuget\slowcheetah.*.nupkg
