@@ -203,7 +203,7 @@ $propImport.Condition = ' ''$(SlowCheetah_EnableImportFromNuGet)''==''true'' and
 AddImportElementIfNotExists -projectRootElement $projectMSBuild
 
 $item = $projectMSBuild.ProjectItems | where-object {$_.Name -eq "SlowCheetah.Transforms.targets"} 
-$item.Properties.Item("BuildAction").Value = [int]3
+$item.Properties.Item("BuildAction").Value = [int]3 
 
 $projectMSBuild.Save()
 start http://bit.ly/slowcheetah-ps1
